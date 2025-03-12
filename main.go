@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+
+	"github.com/a-h/templ"
+	"github.com/danielleedottech/danielleetech-go/templates"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -11,7 +14,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", handler)
+	http.Handle("/", templ.Handler(templates.Hello("World")))
 	RunServer()
 }
 
