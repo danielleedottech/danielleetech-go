@@ -9,10 +9,6 @@ import (
 	"github.com/danielleedottech/danielleetech-go/templates"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, World!")
-}
-
 func main() {
 	http.Handle("/", templ.Handler(templates.Hello("World")))
 	RunServer()
