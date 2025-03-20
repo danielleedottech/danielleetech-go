@@ -4,13 +4,9 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-
-	"github.com/a-h/templ"
-	"github.com/danielleedottech/danielleetech-go/templates"
 )
 
 func main() {
-	http.Handle("/", templ.Handler(templates.Hello("World")))
 	RunServer()
 }
 
